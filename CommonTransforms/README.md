@@ -88,4 +88,17 @@ df = ct.local_to_utc("Australia/Sydney")
 ```
 ```python
 df = ct.utc_to_local("Australia/Sydney",["recorded_datetime"])
-  
+```
+
+### 6. changeTimezone
+Converts all or selected timestamps in dataframe from one timezone to another.
+
+  * **Parameters:**
+    * fromTimezone - specified as Country/City. See [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) to find timezone.
+    * toTimezone -  specified as Country/City
+
+  * **Usage:**
+```python
+df = ct.changeTimezone("Australia/Sydney","America/New_York")
+```
+    
