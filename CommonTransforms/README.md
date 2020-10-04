@@ -138,10 +138,22 @@ Converts a calendar date to 5-digit julian date
 
   * **Parameters:**
    * subset - a mandatory list of columns that contain a date
+   
   * **Usage:**
-
 ```python
 df = df.withColumn("sys_date2",lit("2020-10-01").cast("date")) #Date in Gregorian Format
 df = ct.calendar_to_julian("sys_date2")
 # Output=20275
+```
+
+### 11. addLitCols
+Add a set of literal value columns to dataframe passed as dictionary parameter. For e.g adding audit columns to a dataframe  
+
+  * **Parameters:**
+   * colDict - a mandatory dict object that contains key(column) and values.
+   
+  * **Usage:**
+```python
+audit={"audit_key":66363,"pipeline_id":"56f63394bb06dd7f6945f636f1d4018bd50f1850", "start_datetime": "2020-10-01 10:00:00", "end_datetime": "2020-10-01 10:02:05"}
+df = ct.addLitCols(audit)
 ```
