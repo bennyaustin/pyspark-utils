@@ -110,3 +110,38 @@ Drop columns that are either system or non-business from dataframe
 ```python
 df = ct.dropSysColumns(["col1","col2"])
 ```
+### 8. addChecksumCol
+Create a checksum column using all columns of the dataframe
+
+  * **Parameters:**
+   * colName - Name of the new checksum column
+   
+  * **Usage:**
+```python
+df = ct.addChecksumCol("checksum")
+```
+### 9. julian_to_calendar
+Converts a 5-digit or 7-digit Julian date to a calendar date
+
+  * **Parameters:**
+   * subset - a mandatory list of columns that contain a Julian date value
+   
+  * **Usage:**
+```python
+df = df.withColumn("sys_date1",lit(20275)) #Date in Julian Format
+df = ct.julian_to_calendar("sys_date1")
+# Output=2020-10-01
+```
+
+### 10. calendar_to_julian
+Converts a calendar date to 5-digit julian date
+
+  * **Parameters:**
+   * subset - a mandatory list of columns that contain a date
+  * **Usage:**
+
+```python
+df = df.withColumn("sys_date2",lit("2020-10-01").cast("date")) #Date in Gregorian Format
+df = ct.calendar_to_julian("sys_date2")
+# Output=20275
+```
