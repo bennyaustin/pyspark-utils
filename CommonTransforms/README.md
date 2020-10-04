@@ -154,6 +154,9 @@ Add a set of literal value columns to dataframe passed as dictionary parameter. 
    
   * **Usage:**
 ```python
-audit={"audit_key":66363,"pipeline_id":"56f63394bb06dd7f6945f636f1d4018bd50f1850", "start_datetime": "2020-10-01 10:00:00", "end_datetime": "2020-10-01 10:02:05"}
+audit={"audit_key":66363,
+       "pipeline_id":"56f633",
+       "start_datetime": "2020-10-01T10:00:00",
+       "end_datetime": "2020-10-01T10:02:05"}
 df = ct.addLitCols(audit)
 ```
