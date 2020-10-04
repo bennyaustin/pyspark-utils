@@ -7,8 +7,9 @@ if using Databricks, use %run magic command to include this notebook.
 ```python
 %run "/<notebook path in workspace>/CommonTransforms"
 ```
-Then instantiate the class by passing yor input dataframe
+Then instantiate the class by passing the dataframe
 ```python
+df = spark.read.csv(path)
 ct = CommonTransforms(df)
 ```
 
@@ -65,7 +66,7 @@ df = ct.deDuplicate(["col1","col2"])
 Convert all or a subset of timestamp columns from UTC to timestamp in local timezone
 
   * **Parameters:**
-    * localTimeZone - your local timezone specified as Country/City. Here is the list of [timezones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+    * localTimeZone - your target timezone specified as Country/City. Here is the list of [timezones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
     * subset - optional list of column names to consider.
     
   * **Usage:**
@@ -79,7 +80,7 @@ df = ct.utc_to_local("Australia/Sydney",["pickup_datetime","dropoff_datetime"])
 Convert all or a subset of timestamp columns from local timezone to UTC 
 
   * **Parameters:**
-    * localTimeZone - your local timezone specified as Country/City. Here is the list of [timezones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+    * localTimeZone - your source timezone specified as Country/City. Here is the list of [timezones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
     * subset - optional list of column names to consider.
     
   * **Usage:**
@@ -134,7 +135,7 @@ df = ct.julian_to_calendar("sys_date1")
 ```
 
 ### 10. calendar_to_julian
-Converts a calendar date to 5-digit julian date
+Converts a calendar date to 5-digit Julian date
 
   * **Parameters:**
    * subset - a mandatory list of columns that contain a date
