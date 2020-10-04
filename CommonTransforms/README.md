@@ -65,7 +65,7 @@ df = ct.deDuplicate(["col1","col2"])
 Convert all or a subset of timestamp columns from UTC to timestamp in local timezone
 
   * **Parameters:**
-    * localTimeZone - your local timezone specified as Country/City. See [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) to find timezone.
+    * localTimeZone - your local timezone specified as Country/City. Here is the list of [timezones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
     * subset - optional list of column names to consider.
     
   * **Usage:**
@@ -79,7 +79,7 @@ df = ct.utc_to_local("Australia/Sydney",["pickup_datetime","dropoff_datetime"])
 Convert all or a subset of timestamp columns from local timezone to UTC 
 
   * **Parameters:**
-    * localTimeZone - your local timezone specified as Country/City. See [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) to find timezone.
+    * localTimeZone - your local timezone specified as Country/City. Here is the list of [timezones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
     * subset - optional list of column names to consider.
     
   * **Usage:**
@@ -89,16 +89,24 @@ df = ct.local_to_utc("Australia/Sydney")
 ```python
 df = ct.utc_to_local("Australia/Sydney",["recorded_datetime"])
 ```
-
 ### 6. changeTimezone
 Converts all or selected timestamps in dataframe from one timezone to another.
 
   * **Parameters:**
-    * fromTimezone - specified as Country/City. See [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) to find timezone.
+    * fromTimezone - specified as Country/City. Here is the list of [timezones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
     * toTimezone -  specified as Country/City
 
   * **Usage:**
 ```python
 df = ct.changeTimezone("Australia/Sydney","America/New_York")
 ```
-    
+### 7. dropSysColumns
+Drop columns that are either system or non-business from dataframe
+
+  * **Parameters:**
+   * columns - list of columns to be dropped
+   
+  * **Usage:**
+```python
+df = ct.dropSysColumns(["col1","col2"])
+```
