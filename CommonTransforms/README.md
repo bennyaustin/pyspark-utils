@@ -75,3 +75,17 @@ df = ct.utc_to_local("Australia/Sydney")
 ```python
 df = ct.utc_to_local("Australia/Sydney",["pickup_datetime","dropoff_datetime"])
 ```
+### 5. local_to_utc
+Convert all or a subset of timestamp columns from local timezone to UTC 
+
+  * **Parameters:**
+    * localTimeZone - your local timezone specified as Country/City. See [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) to find timezone.
+    * subset - optional list of column names to consider.
+    
+  * **Usage:**
+```python
+df = ct.local_to_utc("Australia/Sydney")
+```
+```python
+df = ct.utc_to_local("Australia/Sydney",["recorded_datetime"])
+  
