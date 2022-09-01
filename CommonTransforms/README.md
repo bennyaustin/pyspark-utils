@@ -3,7 +3,7 @@
 CommonTransforms is a Python class that uses PySpark libraries to apply common transformations to a Spark dataframe. 
 
 ## Getting Started
-if using Databricks, use %run magic command to include this notebook.
+Use %run magic command to include this notebook. The %run magic command will work equally well for Synapse Spark Pool and Databricks
 ```python
 %run "/<notebook path in workspace>/CommonTransforms"
 ```
