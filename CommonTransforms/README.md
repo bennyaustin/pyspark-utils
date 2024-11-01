@@ -1,7 +1,6 @@
 # CommonTransforms
 
 CommonTransforms is a Python class that uses PySpark libraries to apply common transformations to a Spark dataframe. 
-An implementation of this class is available here [github.com/bennyaustin/synapse-dataplatform](https://github.com/bennyaustin/synapse-dataplatform/blob/main/notebook/L2Transform-Generic-Synapse.json)
 
 ## Getting Started
 Use %run magic command to include this notebook. The %run magic command will work equally well for Synapse Spark Pool and Databricks
@@ -162,3 +161,7 @@ audit={"audit_key":66363,
        "end_datetime": "2020-10-01T10:02:05"}
 df = ct.addLitCols(audit)
 ```
+## Implementation References
+* **[Microsoft Fabric data platform using ELT Framework](https://github.com/bennyaustin/fabric-dataplatform)** 
+* **[Azure Databricks data platform using ELT Framework](https://github.com/bennyaustin/synapse-dataplatform)**
+* **[Azure Synapse data platform using ELT Framework](https://github.com/bennyaustin/synapse-dataplatform)**
